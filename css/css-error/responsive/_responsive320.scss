@@ -1,0 +1,17 @@
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .error .error-holder .error-info {
+        width: 90%;
+        z-index: 1;
+
+        .error-404 {
+            p {
+                font-size: 100px;
+            }
+            
+            img {
+                height: 150px;
+                width: 150px;
+            }
+        }
+    }
+}

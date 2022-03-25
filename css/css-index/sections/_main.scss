@@ -1,0 +1,143 @@
+.main {
+    @include add-flex(column, center);
+    height: 100vh;
+    background: url("../images/main-bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+
+    .main-holder {
+        @include add-flex(column, center);
+        width: 60%;
+        background: linear-gradient(
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)
+        ), url("../images/main-holder-bg.gif");
+        background-size: cover;
+        border: 5px double white;
+        box-shadow: $defLightShadow;
+        position: relative;
+        top: 0;
+        padding: 70px 10px;
+        transition: 300ms;
+        z-index: 5;
+
+        &:hover {
+            box-shadow: $defWhiteShadow;
+            top: -5px;
+        }
+
+        h1 {
+            color: white;
+            font-size: set-size(xxheading);
+            text-align: center;
+            text-transform: capitalize;
+            text-shadow: $defTextShadow;
+            font-weight: bold;
+        }
+
+        .main-skills {
+            @include add-flex(column, center);
+            margin: 15px 0;
+
+            .main-skills-list {
+                @include add-flex;
+                width: 250px;
+                border-bottom: 3px solid white;
+                margin: 5px 0;
+                padding: 5px 10px;
+
+                strong {
+                    color: white;
+                    font-size: set-size(xxl);
+                    text-shadow: $defTextShadow;
+
+                    &::after {
+                        content: "|";
+                        color: white;
+                        font-size: set-size(xxl);
+                        text-shadow: $defTextShadow;
+                        animation: blinking 1s linear infinite;
+    
+                        @keyframes blinking {
+                            0% { opacity: 1; }
+                            50% { opacity: 0; }
+                            100% { opacity: 1; }
+                        }
+                    }
+                }
+            }
+
+            span {
+                color: white;
+                font-size: set-size(md);
+                text-transform: capitalize;
+                font-style: italic;
+                letter-spacing: 5px;
+                text-shadow: $defTextShadow;
+            }
+        }
+
+        button {
+            color: $defBlue;
+            font-size: set-size(xxl);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            background: white;
+            border: 3px solid transparent;
+            cursor: pointer;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin-top: 20px;
+            padding: 5px 10px;
+            transition: 300ms;
+
+            &:hover {
+                color: white;
+                background: $defBlue;
+                border: 3px solid white;
+                box-shadow: $defGlowingBlueShadow;
+            }
+        }
+    }
+
+    .main-circle {
+        height: 450px;
+        width: 450px;
+        background: none;
+        border: 15px dashed #04225e;
+        border-radius: 50%;
+        box-shadow: $defShadow;
+        position: absolute;
+        animation: rotating 60s linear infinite;
+
+        @keyframes rotating {
+            0% { transform: rotate(0); }
+            100% { transform: rotate(360deg); }
+        }
+    }
+
+    .custom-shape-divider-bottom-1646488937 {
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+        z-index: 1;
+    }
+    
+    .custom-shape-divider-bottom-1646488937 svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 70px;
+    }
+    
+    .custom-shape-divider-bottom-1646488937 .shape-fill {
+        fill: #FFFFFF;
+    }
+}

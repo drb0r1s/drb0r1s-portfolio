@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="drb0r1s">
+        <meta name="description" content="Official Website of drb0r1s, Front-end Web Developer.">
+        <meta name="keywords" content="drb0r1s, Boris, Web, Web Developer, Front-end Web Developer, HTML, CSS, JS, JavaScript, Discord Bot Developer">
+        <title>DRB0R1S - Error</title>
+        <link rel="icon" href="./images/10-b-black-logo.png">
+        <link rel="stylesheet" href="./css/main.css">
+        <style>
+            img[alt="www.000webhost.com"] { display: none; }
+        </style>
+    </head>
+
+    <body>
+        <div class="loading">
+            <div class="loader"></div>
+
+            <div class="loading-holder">
+                <img src="./images/10-b-black-logo.png" alt="LOADING">
+            </div>
+        </div>
+        
+        <section class="error">
+            <div class="error-holder">
+                <div class="error-line"></div>
+                
+                <div class="error-info">
+                    <div class="error-404">
+                        <p>4</p>
+                        <img src="./images/10-b-white-logo.png" alt="B O R I S">
+                        <p>4</p>
+                    </div>
+
+                    <strong id="error-status-strong">status: </strong>
+
+                    <button onclick="returnHome();">home</button>
+                </div>
+            </div>
+        </section>
+
+        <script type="module" src="./script/errorScript/index.js"></script>
+        
+        <script>
+            function returnHome() { window.open("./index.html"); }
+        </script>
+    </body>
+</html>

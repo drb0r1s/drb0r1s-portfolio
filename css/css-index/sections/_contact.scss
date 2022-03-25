@@ -1,0 +1,158 @@
+.contact {
+    @include add-flex(column, center);
+    background: white;
+    border-bottom: 10px dashed $defDarkBlue;
+    position: relative;
+
+    .contact-line {
+        height: 150px;
+        width: 5px;
+        background: $defDarkBlue;
+        box-shadow: $defLightShadow;
+        position: absolute;
+        top: 80px;
+        right: calc((100vw - 954px) / 2 + 21px);
+        z-index: 2;
+    }
+
+    h2 {
+        width: 100%;
+        color: $defDarkBlue;
+        font-size: 100px;
+        text-align: center;
+        text-transform: capitalize;
+        font-weight: bold;
+        letter-spacing: 5px;
+        background: white;
+        position: relative;
+
+        &::after {
+            content: "where you can contact me?";
+            height: 50%;
+            width: 100%;
+            color: white;
+            background: $defDarkBlue;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: 3;
+        }
+    }
+
+    .contact-shape-holder {
+        height: 50px;
+        width: 100%;
+        background: $defDarkBlue;
+        position: relative;
+        bottom: -5px;
+        
+        .custom-shape-divider-top-1646759901 {
+            position: absolute;
+            top: -5px;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            z-index: 1;
+        }
+        
+        .custom-shape-divider-top-1646759901 svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 50px;
+        }
+        
+        .custom-shape-divider-top-1646759901 .shape-fill {
+            fill: #FFFFFF;
+        }
+    }
+
+    .contact-holder {
+        @include add-flex(column, center);
+        width: 100%;
+        background: $defDarkBlue;
+        position: relative;
+        z-index: 4;
+
+        #contact-main-logo {
+            height: 200px;
+            width: auto;
+            filter: invert(1);
+            pointer-events: none;
+            transform: rotate(-90deg);
+            position: absolute;
+            left: -130px;
+        }
+
+        .contact-info {
+            @include add-flex(column, center);
+            width: calc(954px - 42px);
+            background: transparent;
+            border-right: 5px solid white;
+            position: relative;
+
+            .single-contact {
+                @include add-flex(column, center);
+                text-decoration: none;
+            }
+            
+            .contact-line-icon {
+                height: 80px;
+                width: 80px;
+                object-fit: contain;
+                background: $defInvertedDarkBlue;
+                filter: invert(1);
+                pointer-events: none;
+                position: absolute;
+                right: -42px;
+                padding: 10px;
+                z-index: 5;
+            }
+
+            .contact-info-holder {
+                @include add-flex;
+                background: white;
+                border-right: 5px solid $defDarkBlue;
+                box-shadow: $defLightShadow;
+                position: relative;
+                top: 0;
+                margin: 15px 0;
+                padding: 10px 15px;
+                transition: 300ms;
+
+                &:hover {
+                    top: -5px;
+                    box-shadow: $defShadow;
+                }
+
+                img {
+                    height: 100px;
+                    width: 100px;
+                    object-fit: contain;
+                    border-radius: 50%;
+                    pointer-events: none;
+                }
+
+                .info-holder {
+                    @include add-flex(column, center, flex-start);
+                    margin: 0 20px;
+                    
+                    p {
+                        color: black;
+                        font-size: set-size(lg);
+                        text-transform: uppercase;
+                        letter-spacing: 3px;
+                    }
+                    
+                    strong {
+                        color: $defBlue;
+                        font-size: set-size(xxl);
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}

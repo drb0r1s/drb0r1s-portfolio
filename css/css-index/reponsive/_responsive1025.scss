@@ -1,0 +1,56 @@
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+    .main {
+        .main-holder {
+            width: 75%;
+
+            h1 {
+                font-size: 85px;
+            }
+
+            .main-skills {
+                .main-skills-list strong {
+                    font-size: 50px;
+                }
+
+                span {
+                    font-size: 25px;
+                }
+            }
+
+            button {
+                font-size: 50px;
+            }
+        }
+
+        .main-circle {
+            height: 550px;
+            width: 550px;
+            border: 20px dashed $defDarkBlue;
+        }
+    }
+    
+    .about .about-holder {
+        width: 85%;
+    }
+
+    .work-experience {
+        .work-sections .work-line p {
+            font-size: 20px;
+        }
+        
+        .skills .skills-holder {
+            .screen h3 {
+                font-size: 55px;
+            }
+            
+            .keyboard button img {
+                height: 100px;
+                width: 100px;
+            }
+        }
+    }
+
+    .contact .contact-holder #contact-main-logo {
+        left: -200px;
+    }
+}

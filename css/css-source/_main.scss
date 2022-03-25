@@ -1,0 +1,131 @@
+.source {
+    @include add-flex(column, center);
+    height: 100vh;
+    background: linear-gradient(90deg, white 60%, $defDarkBlue 60%);;
+    pointer-events: none;
+    user-select: none;
+    overflow: hidden;
+    
+    .source-holder {
+        @include add-flex(column, center);
+        height: 65vh;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.9)
+            rgba(0, 0, 0, 0.9)
+        ), url("../images/source-bg.jpg");
+        background-size: cover;
+        border-left: 10px dashed white;
+        box-shadow: $defStrongShadow;
+        filter: hue-rotate(150deg);
+        pointer-events: all;
+        position: relative;
+
+        .source-gear {
+            height: 150px;
+            width: 150px;
+            object-fit: contain;
+            pointer-events: none;
+            position: absolute;
+            top: -75px;
+            left: -75px;
+            animation: rotating 10s linear infinite;
+
+            @keyframes rotating {
+                from { transform: rotate(0); }
+                to { transform: rotate(360deg); }
+            }
+        }
+
+        .source-logo {
+            height: 100px;
+            width: 100px;
+            object-fit: contain;
+            filter: invert(1);
+            pointer-events: none;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .gear-holder {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            overflow: hidden;
+
+            img {
+                filter: invert(1);
+            }
+        }
+    
+        .source-info {
+            @include add-flex(column, center);
+            z-index: 5;
+            
+            h1 {
+                color: white;
+                font-size: 120px;
+                text-align: center;
+                text-transform: capitalize;
+                letter-spacing: 5px;
+            }
+    
+            p {
+                color: white;
+                font-size: set-size(lg);
+                text-align: center;
+    
+                a {
+                    color: white;
+                    text-decoration: underline;
+                    pointer-events: all;
+                    position: relative;
+                    top: 0;
+                    transition: 300ms;
+    
+                    &:hover {
+                        color: $defBlue;
+                        text-decoration: none;
+                        filter: hue-rotate(-150deg);
+                        top: -5px;
+                    }
+                }
+            }
+    
+            .source-button {
+                @include add-flex;
+                text-decoration: none;
+                background: white;
+                border: 1px solid black;
+                border-radius: 5px;
+                pointer-events: all;
+                position: relative;
+                top: 0;
+                margin: 10px 0;
+                padding: 5px 10px;
+                transition: 300ms;
+    
+                &:hover {
+                    box-shadow: $defLightShadow;
+                    top: -5px;
+                    filter: invert(1);
+                }
+    
+                img {
+                    height: 100px;
+                    width: 100px;
+                    object-fit: contain;
+                    border-right: 1px solid black;
+                    padding: 0 15px;
+                }
+    
+                p {
+                    color: black;
+                    font-size: set-size(xxl);
+                    text-transform: uppercase;
+                    margin: 0 15px;
+                }
+            }
+        }
+    }
+}

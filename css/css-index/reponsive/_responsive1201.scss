@@ -1,0 +1,35 @@
+@media screen and (min-width: 1201px) and (max-width: 1699px) {
+    .main {
+        .main-holder {
+            width: 75%;
+
+            h1 {
+                font-size: 85px;
+            }
+
+            .main-skills {
+                .main-skills-list strong {
+                    font-size: 50px;
+                }
+
+                span {
+                    font-size: 25px;
+                }
+            }
+
+            button {
+                font-size: 50px;
+            }
+        }
+
+        .main-circle {
+            height: 550px;
+            width: 550px;
+            border: 20px dashed $defDarkBlue;
+        }
+    }
+    
+    .about .about-holder {
+        width: 75%;
+    }
+}

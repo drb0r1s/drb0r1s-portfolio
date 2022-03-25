@@ -1,0 +1,204 @@
+.game {
+    @include add-flex(column, flex-start);
+    height: 500px;
+    background: white;
+    border-bottom: 10px dashed $defDarkBlue;
+
+    .game-main {
+        @include add-flex(column, center);
+        background: white;
+        position: relative;
+
+        .line-holder {
+            // calc(h2(margin-top) + h2(height) + h2(margin-bottom) + .canvas-holder(margin-top) + .canvas-holder(width) / 2)
+            height: calc(50px + 84px + 20px + 10px + 150px);
+            border-left: 5px solid $defDarkBlue;
+            position: absolute;
+            top: 0;
+        }
+        
+        .game-holder {
+            @include add-flex(column, flex-start);
+            overflow: hidden;
+            z-index: 3;
+    
+            h2 {
+                color: $defBlue;
+                font-size: set-size(xxheading);
+                text-align: center;
+                text-transform: uppercase;
+                font-weight: bold;
+                letter-spacing: 10px;
+                margin-top: 50px;
+                margin-bottom: 20px;
+            }
+    
+            .canvas-holder {
+                @include add-flex(column, center);
+                margin-top: 10px;
+                margin-bottom: 20px;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    display: block;
+                    height: calc(100vw / 2);
+                    width: 5px;
+                    background: $defDarkBlue;
+                    transform: rotate(90deg);
+                    pointer-events: none;
+                    position: absolute;
+                    left: calc((100vw / 2) / -2);
+                }
+
+                #game-starter {
+                    @include add-flex(column, center);
+                    height: 290px;
+                    width: 890px;
+                    background: white;
+                    cursor: pointer;
+                    position: absolute;
+                    animation: invertChange 5s linear infinite;
+                    transition: 500ms;
+                    
+                    @keyframes invertChange {
+                        0% { filter: invert(0); }
+                        50% { filter: invert(1); }
+                        100% { filter: invert(0); }
+                    }
+
+                    img {
+                        height: 150px;
+                        width: auto;
+                        object-fit: contain;
+                        pointer-events: none;
+                        animation: rotating 5s linear infinite;
+
+                        @keyframes rotating {
+                            from { transform: rotate(0); }
+                            to { transform: rotate(360deg); }
+                        }
+                    }
+                }
+                
+                canvas {
+                    height: 300px;
+                    width: 900px;
+                    background: white;
+                    border: 5px solid $defBlue;
+                    border-left: 5px solid $defDarkBlue;
+                    box-shadow: $defLightShadow;
+                }
+
+                .game-info {
+                    color: white;
+                    font-size: set-size(xxl);
+                    text-align: center;
+                    opacity: 0;
+                    pointer-events: none;
+                    position: absolute;
+                    top: 40%;
+                    transform: translate(0, -50%);
+                    transition: 300ms;
+
+                    span {
+                        color: $defBlue;
+                        text-shadow: 2px 2px 2px rgba(255,255,255,0.7);
+                    }
+                }
+
+                .active-game-info {
+                    opacity: 1;
+                    top: 50%;
+                    transform: translate(0, -50%);
+                }
+
+                .game-over-screen {
+                    @include add-flex(column, center);
+                    display: none;
+                    width: 0;
+                    background: white;
+                    border: 3px solid $defDarkBlue;
+                    border-left: 3px solid $defBlue;
+                    box-shadow: none;
+                    opacity: 0;
+                    transform: translate(0, -50%);
+                    position: absolute;
+                    top: 40%;
+                    padding: 10px 15px;
+                    transition: 300ms;
+
+                    .game-over-screen-content {
+                        @include add-flex(column, center);
+                        width: 100%;
+                        opacity: 0;
+                        transition: 300ms;
+                        
+                        strong {
+                            color: $defBlue;
+                            font-size: set-size(heading);
+                            text-align: center;
+                            text-transform: uppercase;
+                            letter-spacing: 5px;
+                        }
+
+                        .scoreboard {
+                            @include add-flex(column, center);
+                            width: 80%;
+                            background: white;
+                            border: 1px solid $defBlue;
+                            box-shadow: $defLightShadow;
+                            margin: 10px 0;
+                            padding: 10px 15px;
+
+                            strong {
+                                color: $defDarkBlue;
+                                font-size: set-size(xxl);
+                                text-align: center;
+                            }
+
+                            p {
+                                color: $defBlue;
+                                font-size: set-size(lg);
+                                text-align: center;
+                                text-transform: uppercase;
+                                letter-spacing: 3px;
+                                margin: 0;
+                            }
+                        }
+    
+                        button {
+                            color: $defDarkBlue;
+                            font-size: set-size(xl);
+                            text-transform: uppercase;
+                            letter-spacing: 3px;
+                            background: white;
+                            border: 1px solid $defDarkBlue;
+                            outline: none;
+                            position: relative;
+                            top: 0;
+                            margin: 10px 0;
+                            padding: 5px 10px;
+                            transition: 300ms;
+    
+                            &:hover {
+                                color: white;
+                                background: $defBlue;
+                                border: 1px solid white;
+                                top: -5px;
+                                box-shadow: $defGlowingBlueShadow;
+                            }
+                        }
+                    }
+                }
+
+                .active-game-over-screen {
+                    width: 50%;
+                    box-shadow: $defLightWhiteShadow;
+                    opacity: 1;
+                    top: 50%;
+                }
+            }
+        }
+    }
+}

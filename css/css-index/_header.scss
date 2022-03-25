@@ -1,0 +1,146 @@
+@mixin default-nav {
+    nav {
+        @include add-flex(row, space-around);
+        padding: 0 10px;
+
+        a {
+            color: $defBlue;
+            font-size: set-size(xl);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            top: 0;
+            margin: 0 10px;
+            transition: 300ms;
+
+            &:hover {
+                color: white;
+                top: -5px;
+                text-shadow: 0px 0px 15px #FFFFFF;
+            }
+        }
+
+        #active-section {
+            color: white;
+            top: -5px;
+            text-shadow: 0px 0px 15px #FFFFFF;
+        }
+    }
+}
+
+header {
+    @include add-flex;
+    height: 80px;
+    width: 90%;
+    background: black;
+    border: 3px solid $defBlue;
+    box-shadow: $defLightShadow;
+    transform: translate(-50%, 0);
+    opacity: 0;
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    padding: 20px 0;
+    transition: 500ms;
+    z-index: 50;
+
+    img {
+        height: 50px;
+        width: 50px;
+        object-fit: contain;
+        position: absolute;
+        left: 5px;
+    }
+    
+    @include default-nav;
+
+    .header-mobile-button {
+        height: 5px;
+        width: 50px;
+        background: white;
+        position: absolute;
+        right: 15px;
+        transition: 700ms;
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            height: 5px;
+            width: 25px;
+            background: white;
+            position: absolute;
+            top: 10px;
+            transition: 300ms;
+        }
+
+        &::before {
+            top: -10px;
+            left: 25px;
+        }
+    }
+
+    #active-header-mobile-button {
+        transform: rotate(130deg);
+
+        &::before {
+            opacity: 0;
+            left: -10px;
+            transform: rotate(-90deg);
+        }
+
+        &::after {
+            width: 50px;
+            top: 0;
+            transform: rotate(-85deg);
+        }
+    }
+}
+
+#active-header {
+    opacity: 1;
+    top: 10px;
+}
+
+.mobile-menu {
+    @include add-flex(column, center);
+    height: 100vh;
+    width: 75%;
+    background: black;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: -75%;
+    padding: 30px 10px;
+    transition: 300ms;
+    z-index: 60;
+
+    @include default-nav;
+
+    img {
+        height: auto;
+        width: 200px;
+        filter: invert(1);
+        pointer-events: none;
+        margin: 10px 0;
+    }
+    
+    nav {
+        @include add-flex(column, center);
+        border-top: 3px solid $defBlue;
+        border-bottom: 3px solid $defBlue;
+        margin: 10px 0;
+
+        a {
+            font-size: set-size(xxl);
+            margin: 15px 0;
+        }
+    }
+}
+
+#active-mobile-menu {
+    opacity: 1;
+    left: 0;
+    box-shadow: $defShadow;
+}

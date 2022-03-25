@@ -1,0 +1,288 @@
+@media screen and (max-width: 319px) {
+    .main {
+        .main-holder {
+            width: 90%;
+
+            h1 {
+                font-size: 55px;
+            }
+
+            .main-skills .main-skills-list {
+                width: 200px;
+            }
+        }
+
+        .main-circle {
+            height: 550px;
+            width: 550px;
+            border: 20px dashed $defDarkBlue;
+        }
+    }
+    
+    .about .about-holder {
+        flex-direction: column;
+        height: auto;
+        width: 95%;
+
+        .about-profile {
+            width: 100%;
+            border: none;
+        }
+        
+        .about-info {
+            padding: 0;
+
+            .about-text {
+                padding: 15px 5px;
+
+                p {
+                    padding: 15px 5px;
+                }
+            }
+
+            .about-contact {
+                position: relative;
+                bottom: 0;
+                right: 0;
+                margin: 0;
+                padding: 0;
+
+                .about-links a {
+                    margin: 0;
+
+                    img {
+                        height: 50px;
+                        width: 50px;
+                    }
+                }
+            }
+        }
+    }
+
+    .work-experience {
+        overflow-x: hidden;
+        
+        h2 {
+            font-size: 40px;
+        }
+        
+        .work-sections .work-line {
+            top: 10px;
+            
+            p {
+                font-size: 20px;
+            }
+        }
+        
+        .skills .skills-holder {
+            width: 80%;
+            
+            .screen {
+                height: 250px;
+                padding: 15px 10px;
+                
+                h3 {
+                    font-size: 35px;
+                }
+
+                strong {
+                    font-size: 35px;
+                }
+
+                p {
+                    font-size: 18px;
+                }
+
+                a {
+                    text-align: center;
+                }
+            }
+
+            .active-screen {
+                height: 600px;
+            }
+            
+            .keyboard {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+                
+                button img {
+                    height: 50px;
+                    width: 50px;
+                }
+            }
+        }
+
+        .projects {
+            width: calc(100% + 50px);
+            
+            .projects-holder .projects-screen {
+                align-items: center;
+                width: 80%;
+                left: -22.5px;
+
+                .projects-menu {
+                    flex-direction: column;
+                    
+                    button {
+                        font-size: 20px;
+                    }
+                }
+                
+                .projects-list {
+                    padding: 5px;
+                    overflow-x: hidden;
+                    
+                    .project {
+                        flex-direction: column;
+
+                        .project-info {
+                            align-items: center;
+                            margin-top: 30px;
+
+                            strong, p {
+                                text-align: center;
+                            }
+
+                            strong {
+                                font-size: 25px;
+                            }
+
+                            p {
+                                font-size: 18px;
+                                padding: 5px 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .see-more {
+            margin-top: 30px;
+
+            .see-more-holder {
+                width: 95%;
+
+                .see-more-info {
+                    flex-direction: column;
+
+                    .see-more-github img {
+                        margin: 10px 0;
+                    }
+
+                    p {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        .skills .skills-holder,
+        .projects .projects-holder .projects-screen,
+        .see-more .see-more-holder {
+            position: relative;
+            top: 35px;
+            margin-bottom: 30px;
+        }
+    }
+
+    .contact {
+        h2 {
+            font-size: 50px;
+        }
+        
+        .contact-line {
+            display: none;
+        }
+        
+        .contact-holder {
+            align-items: flex-start;
+
+            #contact-main-logo {
+                display: none;
+            }
+
+            .contact-info {
+                align-items: flex-start;
+                width: calc(100vw - 50px);
+
+                .contact-info-holder {
+                    flex-direction: column;
+                    position: relative;
+                    left: 20px;
+                    padding: 10px 0;
+                    z-index: 5;
+
+                    .info-holder {
+                        align-items: center;
+                        margin-top: 20px;
+                        
+                        strong {
+                            font-size: 30px;
+                            word-break: break-all;
+                        }
+
+                        p {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .game {
+        height: auto;
+
+        .game-main {
+            .line-holder {
+                height: calc(50px + 120px + 20px + 10px + 150px);
+            }
+            
+            .game-holder {
+                h2 {
+                    font-size: 50px;
+                }
+                
+                .canvas-holder {
+                    #game-starter {
+                        width: 220px;
+                    }
+            
+                    canvas {
+                        width: 230px;
+                    }
+        
+                    .game-info {
+                        font-size: 30px;
+                    }
+
+                    .game-over-screen .game-over-screen-content {
+                        strong {
+                            font-size: 30px;
+                        }
+
+                        .scoreboard {
+                            strong, p {
+                                font-size: 20px;
+                            }
+                        }
+                    }
+        
+                    .active-game-over-screen {
+                        width: 90%;
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        flex-direction: column;
+
+        .footer-signature {
+            margin: 20px 0;
+        }
+    }
+}

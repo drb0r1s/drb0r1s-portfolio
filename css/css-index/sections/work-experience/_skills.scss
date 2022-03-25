@@ -1,0 +1,146 @@
+.skills {
+    @include add-flex(column, center);
+    background: white;
+    margin: 30px 0;
+    position: relative;
+    
+    .skills-holder {
+        @include add-flex(column, center);
+        width: 60%;
+        background: white;
+        box-shadow: $defShadow;
+        padding: 10px 15px;
+
+        .screen {
+            @include add-flex(column, center);
+            height: 100px;
+            width: 100%;
+            background: linear-gradient(
+                rgba(0, 0, 0, 0.9),
+                rgba(0, 0, 0, 0.9)
+            ), url("../images/main-bg.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 10px 0;
+            padding: 15px 30px;
+            transition: 300ms;
+            
+            h3 {
+                color: white;
+                font-size: set-size(xheading);
+                text-align: center;
+                text-transform: capitalize;
+                margin: 0;
+                transition: 300ms;
+            
+                span {
+                    color: $defBlue;
+                    text-decoration: underline;
+                }
+            }
+
+            strong {
+                color: $defBlue;
+                font-size: set-size(xheading);
+                text-align: center;
+                text-transform: uppercase;
+                letter-spacing: 5px;
+                transition: 300ms;
+            }
+
+            p {
+                color: white;
+                font-size: set-size(md);
+                text-align: center;
+                margin: 0;
+                transition: 300ms;
+
+                span {
+                    color: $defBlue;
+                }
+            }
+
+            a {
+                color: $defBlue;
+                font-size: set-size(lg);
+                text-transform: uppercase;
+                letter-spacing: 3px;
+                font-weight: bold;
+                text-decoration: none;
+                background: white;
+                border: 3px solid $defBlue;
+                position: relative;
+                top: 0;
+                margin: 10px 0;
+                padding: 5px 10px;
+                transition: 300ms;
+
+                &:hover {
+                    color: white;
+                    background: $defBlue;
+                    border: 3px solid white;
+                    top: -5px;
+                    box-shadow: $defGlowingBlueShadow;
+                }
+            }
+
+            strong, a, p {
+                opacity: 0;
+                position: relative;
+                top: -10px;
+            }
+
+            .active-screen-content {
+                opacity: 1;
+                top: 0;
+            }
+        }
+
+        .active-screen {
+            height: 300px;
+
+            h3 {
+                opacity: 0;
+            }
+        }
+
+        .keyboard {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+
+            button {
+                background: white;
+                border: 1px solid black;
+                box-shadow: $defInsetShadow;
+                position: relative;
+                top: 0;
+                padding: 15px;
+                transition: 300ms;
+
+                &:hover {
+                    top: -5px;
+                    box-shadow: $defLightWhiteShadow;
+                    filter: invert(1);
+                }
+                
+                img {
+                    height: 110px;
+                    width: 110px;
+                    object-fit: contain;
+                    filter: brightness(0);
+                    pointer-events: none;
+                }
+            }
+
+            .active-keyboard-button {
+                top: -5px;
+                box-shadow: $defLightWhiteShadow;
+                filter: invert(1);
+            }
+        }
+    }
+}

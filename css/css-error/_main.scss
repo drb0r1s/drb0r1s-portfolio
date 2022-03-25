@@ -1,0 +1,91 @@
+.error {
+    @include add-flex(column, center);
+    height: 100vh;
+    background: $defDarkBlue;
+
+    .error-holder {
+        @include add-flex(column, center);
+        height: 80vh;
+        width: 100%;
+        background: white;
+        position: relative;
+
+        .error-line {
+            height: 100%;
+            width: 0;
+            background: transparent;
+            border-left: 10px dashed $defDarkBlue;
+            position: absolute;
+            top: 0;
+            left: 10%;
+        }
+        
+        .error-info {
+            @include add-flex(column, center);
+            height: 80%;
+            width: 60%;
+            background: linear-gradient(45deg, $defBlue, 15%, $defDarkBlue 30%, black 30%);
+            box-shadow: $defShadow;
+    
+            .error-404 {
+                @include add-flex;
+                margin: 30px 0;
+    
+                p {
+                    color: white;
+                    font-size: 150px;
+                    margin: 0 20px;
+                }
+    
+                img {
+                    height: 200px;
+                    width: 200px;
+                    object-fit: contain;
+                    pointer-events: none;
+                }
+            }
+    
+            strong {
+                width: 250px;
+                color: white;
+                font-size: set-size(xxl);
+                text-transform: uppercase;
+    
+                &::after {
+                    content: "|";
+                    color: white;
+                    font-size: set-size(xxl);
+                    text-transform: uppercase;
+                    animation: blinking 1s linear infinite;
+    
+                    @keyframes blinking {
+                        0% { opacity: 1; }
+                        50% { opacity: 0; }
+                        100% { opacity: 1; }
+                    }
+                }
+            }
+
+            button {
+                color: white;
+                font-size: set-size(xxl);
+                text-transform: uppercase;
+                letter-spacing: 3px;
+                background: black;
+                border: 1px solid white;
+                cursor: pointer;
+                position: relative;
+                top: 0;
+                margin: 10px 0;
+                padding: 5px 10px;
+                transition: 300ms;
+
+                &:hover {
+                    top: -5px;
+                    box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.5);
+                    filter: invert(1);
+                }
+            }
+        }
+    }
+}

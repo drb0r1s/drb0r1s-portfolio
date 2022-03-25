@@ -1,0 +1,168 @@
+.projects {
+    height: 500px;
+    background: $defBlue;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 10px -10px 0px 5px rgba(4,34,94,0.7);
+    position: relative;
+    left: -50px;
+    margin-top: 70px;
+    margin-bottom: 50px;
+
+    .projects-holder {
+        @include add-flex(column, center);
+        height: 100%;
+        background: transparent;
+        border-left: 5px dashed white;
+        position: relative;
+        left: 45px;
+
+        .work-line {
+            .line-dot {
+                background: $defBlue;
+                border: 3px solid white;
+            }
+
+            p {
+                color: white;
+            }
+        }
+
+        .projects-screen {
+            @include add-flex(column, flex-start, flex-start);
+            width: 70%;
+            border: 3px dashed white;
+            position: relative;
+            top: 0;
+            margin: 10px 0;
+            padding: 15px 10px;
+            transition: 300ms;
+            
+            .projects-menu {
+                @include add-flex;
+                margin: 15px 0;
+                border-bottom: 1px solid white;
+                padding: 5px 0;
+    
+                button {
+                    color: white;
+                    font-size: set-size(lg);
+                    text-transform: uppercase;
+                    letter-spacing: 3px;
+                    background: transparent;
+                    border: 1px solid transparent;
+                    cursor: pointer;
+                    position: relative;
+                    top: 0;
+                    margin: 0 15px;
+                    padding: 5px 10px;
+                    transition: 300ms;
+    
+                    &:hover {
+                        color: $defBlue;
+                        background: white;
+                        border: 1px solid $defBlue;
+                        top: -5px;
+                        box-shadow: $defLightWhiteShadow;
+                    }
+                }
+
+                .active-project-button {
+                    color: $defBlue;
+                    background: white;
+                    border: 1px solid $defBlue;
+                    top: -5px;
+                    box-shadow: $defLightWhiteShadow;
+                }
+            }
+
+            .projects-list {
+                @include add-flex(column, flex-start);
+                height: 300px;
+                width: 100%;
+                border-top: 3px solid white;
+                border-bottom: 3px solid white;
+                border-left: 3px solid white;
+                margin: 10px 0;
+                padding: 5px 10px;
+                overflow-y: scroll;
+
+                #projects-loader {
+                    height: 100px;
+                    width: 100px;
+                    background: transparent;
+                    border: 10px solid transparent;
+                    border-top: 10px solid white;
+                    border-radius: 50%;
+                    margin: 30px 0;
+                    animation: rotating 3s linear infinite;
+
+                    @keyframes rotating {
+                        from { transform: rotate(0) };
+                        to { transform: rotate(360deg) };
+                    }
+                }
+                
+                .project {
+                    @include add-flex;
+                    text-decoration: none;
+                    border: 3px solid transparent;
+                    cursor: pointer;
+                    position: relative;
+                    top: 0;
+                    margin: 10px 0;
+                    padding: 5px 10px;
+                    transition: 300ms;
+
+                    &:hover {
+                        border: 3px solid white;
+                        top: -5px;
+                        box-shadow: $defWhiteShadow;
+                    }
+                    
+                    .tech-holder {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        grid-template-rows: repeat(3, 1fr);
+                        gap: 5px;
+                        align-items: center;
+                        justify-content: center;
+                        border: 1px solid white;
+                        margin: 0 10px;
+                        padding: 10px;
+                        
+                        img {
+                            height: 50px;
+                            width: 50px;
+                            object-fit: contain;
+                            filter: brightness(0) invert(1);
+                            pointer-events: none;
+                        }
+                    }
+    
+                    .project-info {
+                        @include add-flex(column, flex-start, flex-start);
+                        
+                        strong {
+                            color: white;
+                            font-size: set-size(xxl);
+                            letter-spacing: 3px;
+                        }
+        
+                        p {
+                            color: white;
+                            font-size: set-size(md);
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .top-projects-screen {
+            border: 3px solid white;
+            top: -5px;
+            box-shadow: $defWhiteShadow;
+        }
+    }
+}

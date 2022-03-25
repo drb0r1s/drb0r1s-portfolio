@@ -1,0 +1,98 @@
+@media screen and (min-width: 1700px) {
+    .main {
+        .main-holder {
+            h1 {
+                font-size: 100px;
+            }
+    
+            .main-skills {
+                .main-skills-list strong {
+                    font-size: 50px;
+                }
+                
+                span {
+                    font-size: 30px;
+                }
+            }
+    
+            button {
+                font-size: 60px;
+            }
+        }
+
+        .main-circle {
+            height: 650px;
+            width: 650px;
+            border: 25px dashed $defDarkBlue;
+        }
+    }
+
+    .about .about-holder {
+        .about-info .about-text p {
+            font-size: 25px;
+        }
+
+        .about-profile {
+            img {
+                height: 170px;
+                width: 170px;
+            }
+
+            strong {
+                font-size: 60px;
+            }
+
+            p {
+                font-size: 30px;
+            }
+        }
+    }
+
+    .work-experience {
+        h2 {
+            font-size: 100px;
+        }
+
+        .work-sections .work-line p {
+            font-size: 30px;
+        }
+
+        .skills .skills-holder {
+            .screen p {
+                font-size: 25px;
+            }
+            
+            .keyboard button img {
+                height: 130px;
+                width: 130px;
+            }
+        }
+
+        .see-more .see-more-holder {
+            strong {
+                font-size: 50px;
+            }
+
+            .see-more-info {
+                .see-more-github img {
+                    height: 150px;
+                    width: 150px;
+                }
+                
+                p {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+
+    .contact .contact-holder .contact-info .contact-info-holder .info-holder {
+        strong {
+            font-size: 50px;
+        }
+        
+        p {
+            font-size: 30px;
+        }
+    }
+}

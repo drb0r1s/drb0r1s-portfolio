@@ -1,0 +1,192 @@
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .main {
+        .main-holder {
+            width: 80%;
+
+            h1 {
+                font-size: 70px;
+            }
+        }
+
+        .main-circle {
+            height: 500px;
+            width: 500px;
+            border: 20px dashed $defDarkBlue;
+        }
+    }
+    
+    .about .about-holder {
+        flex-direction: column;
+        height: auto;
+        width: 95%;
+
+        .about-profile {
+            width: 100%;
+            border: none;
+        }
+        
+        .about-info {
+            padding: 0;
+
+            .about-text {
+                padding: 15px 5px;
+            }
+
+            .about-contact {
+                position: relative;
+                bottom: 0;
+                right: 0;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+
+    .work-experience {
+        .work-sections .work-line {
+            top: 10px;
+            
+            p {
+                font-size: 20px;
+            }
+        }
+        
+        .skills .skills-holder {
+            width: 80%;
+            
+            .screen {
+                height: 150px;
+                
+                h3 {
+                    font-size: 55px;
+                }
+            }
+
+            .active-screen {
+                height: 400px;
+            }
+            
+            .keyboard {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+                
+                button img {
+                    height: 100px;
+                    width: 100px;
+                }
+            }
+        }
+
+        .projects .projects-holder .projects-screen {
+            width: 80%;
+
+            .projects-list .project {
+                flex-direction: column;
+
+                .project-info {
+                    align-items: center;
+                    margin-top: 30px;
+
+                    strong, p {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        .see-more {
+            margin-top: 30px;
+
+            .see-more-holder {
+                width: 95%;
+            }
+        }
+
+        .skills .skills-holder,
+        .see-more .see-more-holder {
+            position: relative;
+            top: 35px;
+            margin-bottom: 30px;
+        }
+    }
+
+    .contact {
+        h2 {
+            font-size: 70px;
+        }
+        
+        .contact-line {
+            display: none;
+        }
+        
+        .contact-holder {
+            #contact-main-logo {
+                left: -40px;
+            }
+
+            .contact-info {
+                align-items: flex-start;
+                width: calc(482px - 102px);
+
+                .contact-info-holder {
+                    flex-direction: column;
+
+                    .info-holder {
+                        align-items: center;
+                        margin-top: 20px;
+                        
+                        strong {
+                            font-size: 30px;
+                        }
+
+                        p {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .game {
+        height: auto;
+
+        .game-main {
+            .line-holder {
+                height: calc(50px + 78px + 20px + 10px + 150px);
+            }
+            
+            .game-holder {
+                h2 {
+                    font-size: 65px;
+                }
+                
+                .canvas-holder {
+                    #game-starter {
+                        width: 440px;
+                    }
+            
+                    canvas {
+                        width: 450px;
+                    }
+        
+                    .game-info {
+                        font-size: 35px;
+                    }
+        
+                    .active-game-over-screen {
+                        width: 90%;
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        flex-direction: column;
+
+        .footer-signature {
+            margin: 20px 0;
+        }
+    }
+}

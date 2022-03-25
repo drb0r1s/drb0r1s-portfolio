@@ -1,0 +1,79 @@
+.loading {
+    @include add-flex(column, center);
+    height: 100vh;
+    width: 100%;
+    background: black;
+    position: fixed;
+    transition: 300ms;
+    z-index: 90;
+    overflow: hidden;
+
+    .loader {
+        height: 290px;
+        width: 290px;
+        background: transparent;
+        border: 10px dashed $defDarkBlue;
+        border-radius: 50%;
+        position: absolute;
+        animation: rotating 10s linear infinite;
+
+        @keyframes rotating {
+            from { transform: rotate(0) }
+            to { transform: rotate(360deg) }
+        }
+    }
+    
+    .loading-holder {
+        @include add-flex;
+        height: 300px;
+        width: 300px;
+        background: white;
+        border: 3px solid black;
+        border-radius: 50%;
+        box-shadow: -25px -15px 0px 5px rgba(3,69,252,0.7);
+
+        img {
+            height: 200px;
+            width: 200px;
+            object-fit: contain;
+        }
+    }
+}
+
+@media screen and (max-width: 319px) {
+    .loading {
+        .loading-holder {
+            height: 200px;
+            width: 200px;
+
+            img {
+                height: 100px;
+                width: 100px;
+            }
+        }
+
+        .loader {
+            height: 190px;
+            width: 190px;
+        }
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .loading {
+        .loading-holder {
+            height: 250px;
+            width: 250px;
+
+            img {
+                height: 150px;
+                width: 150px;
+            }
+        }
+
+        .loader {
+            height: 240px;
+            width: 240px;
+        }
+    }
+}

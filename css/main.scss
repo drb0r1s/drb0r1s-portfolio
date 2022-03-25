@@ -1,0 +1,121 @@
+$defBlue: #2855d1;
+$defDarkBlue: #04225e;
+$defInvertedDarkBlue: #fbdda1;
+
+$defLightShadow: 5px 5px 15px 5px rgba(0,0,0,0.3);
+$defShadow: 5px 5px 15px 5px rgba(0,0,0,0.5);
+$defStrongShadow: 5px 5px 15px 5px rgba(0,0,0,0.7);
+$defLightWhiteShadow: 5px 5px 15px 5px rgba(255,255,255,0.3);
+$defWhiteShadow: 5px 5px 15px 5px rgba(255,255,255,0.5);
+$defStrongWhiteShadow: 5px 5px 15px 5px rgba(255,255,255,0.7);
+$defDarkBlueShadow: 5px 5px 15px 5px rgba(4,34,94,0.5);
+
+$defTextShadow: 5px 5px 2px rgba(0,0,0,0.5);
+$defGlowingBlueShadow: 0px 0px 25px 10px rgba(3,69,252,0.7);
+$defInsetShadow: inset 10px 10px 15px 5px rgba(0,0,0,0.3);
+
+$defSizeArray: (
+    "xs": 10px,
+    "sm": 15px,
+    "md": 20px,
+    "lg": 25px,
+    "xl": 30px,
+    "xxl": 40px,
+    "heading": 50px,
+    "xheading": 60px,
+    "xxheading": 70px,
+    "superheading": 80px
+);
+
+@function set-size($size) {
+    @return map-get($defSizeArray, $size);
+}
+
+@mixin add-flex($direction: row, $spacing: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $spacing;
+}
+
+@font-face {
+    src: url("../fonts/YanoneKaffeesatz-Regular.ttf");
+    font-family: borisWebFont;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: borisWebFont !important;
+    line-height: 1;
+}
+
+html {
+    overflow-y: overlay;
+}
+
+body {
+    overflow: hidden;
+}
+
+::selection {
+    color: white;
+    background: $defDarkBlue;
+}
+
+::-webkit-scrollbar {
+    width: 17px;
+}
+
+::-webkit-scrollbar-track {
+    background: white;
+    border-left: 1px solid $defDarkBlue;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $defDarkBlue;
+    border: 1px solid white;
+
+    &:hover {
+        background: $defBlue;
+    }
+}
+
+@import "./loading";
+@import "./context-menu";
+
+// Index
+
+@import "./css-index/header";
+@import "./css-index/sections/main";
+@import "./css-index/sections/about";
+@import "./css-index/sections/work-experience/work-experience";
+@import "./css-index/sections/contact";
+@import "./css-index/sections/game";
+@import "./css-index/footer";
+
+@import "./css-index/reponsive/responsive319";
+@import "./css-index/reponsive/responsive320";
+@import "./css-index/reponsive/responsive481";
+@import "./css-index/reponsive/responsive769";
+@import "./css-index/reponsive/responsive1025";
+@import "./css-index/reponsive/responsive1201";
+@import "./css-index/reponsive/responsive1700";
+
+// Source
+
+@import "./css-source/main";
+
+@import "./css-source/reponsive/responsive319";
+@import "./css-source/reponsive/responsive320";
+@import "./css-source/reponsive/responsive481";
+
+// Error
+
+@import "./css-error/main";
+
+@import "./css-error/responsive/responsive319";
+@import "./css-error/responsive/responsive320";
+@import "./css-error/responsive/responsive481";

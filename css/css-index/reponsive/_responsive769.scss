@@ -1,0 +1,90 @@
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .main {
+        .main-holder {
+            width: 80%;
+
+            h1 {
+                font-size: 70px;
+            }
+        }
+
+        .main-circle {
+            height: 550px;
+            width: 550px;
+            border: 20px dashed $defDarkBlue;
+        }
+    }
+    
+    .about .about-holder {
+        height: 620px;
+        width: 95%;
+    }
+
+    .work-experience {
+        .work-sections .work-line {
+            top: 10px;
+            
+            p {
+                font-size: 20px;
+            }
+        }
+        
+        .skills .skills-holder {
+            width: 80%;
+            
+            .screen h3 {
+                font-size: 55px;
+            }
+            
+            .keyboard button img {
+                height: 100px;
+                width: 100px;
+            }
+        }
+
+        .projects .projects-holder .projects-screen {
+            width: 80%;
+        }
+
+        .see-more {
+            margin-top: 30px;
+        }
+
+        .skills .skills-holder,
+        .see-more .see-more-holder {
+            position: relative;
+            top: 35px;
+            margin-bottom: 30px;
+        }
+    }
+
+    .contact {
+        h2 {
+            font-size: 70px;
+        }
+        
+        .contact-line {
+            display: none;
+        }
+        
+        .contact-holder {
+            #contact-main-logo {
+                left: -220px;
+            }
+
+            .contact-info {
+                width: calc(770px - 102px);
+            }
+        }
+    }
+
+    .game .game-main .game-holder .canvas-holder {
+        #game-starter {
+            width: 690px;
+        }
+
+        canvas {
+            width: 700px;
+        }
+    }
+}

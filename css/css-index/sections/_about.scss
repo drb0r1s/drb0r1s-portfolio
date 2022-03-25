@@ -1,0 +1,151 @@
+.about {
+    @include add-flex(column, center);
+    background: linear-gradient(160deg, white 60%, $defDarkBlue 60%);
+    border-bottom: 10px dashed $defDarkBlue;
+    padding: 30px 0;
+    
+    .about-holder {
+        @include add-flex(row, center, flex-start);
+        height: 550px;
+        width: 70%;
+        background: linear-gradient(
+            rgba(0, 0, 0, 0.9),
+            rgba(0, 0, 0, 0.9)
+        ), url("../images/main-bg.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        border-top: 5px solid $defDarkBlue;
+        border-right: 5px solid white;
+        border-bottom: 5px solid white;
+        border-left: 5px solid $defDarkBlue;
+        box-shadow: $defWhiteShadow;
+        position: relative;
+        top: 0;
+        transition: 300ms;
+
+        &:hover {
+            box-shadow: $defShadow;
+            top: -10px;
+        }
+
+        .about-profile {
+            @include add-flex(column, center);
+            height: 100%;
+            background: white;
+            border-right: 3px solid $defBlue;
+            box-shadow: $defLightShadow;
+            padding: 10px 15px;
+
+            img {
+                height: 150px;
+                width: 150px;
+                object-fit: contain;
+                border: 3px solid $defDarkBlue;
+                border-radius: 50%;
+                box-shadow: $defLightShadow;
+            }
+
+            strong {
+                color: $defBlue;
+                font-size: set-size(xxl);
+                text-align: center;
+                letter-spacing: 3px;
+                margin: 10px 0;
+            }
+
+            p {
+                color: black;
+                font-size: set-size(lg);
+                text-align: center;
+                text-transform: capitalize;
+            }
+        }
+
+        .about-info {
+            @include add-flex(column, flex-start);
+            height: 100%;
+            position: relative;
+            padding: 15px 30px;
+            
+            .about-text {
+                @include add-flex(column, center, flex-start);
+                
+                h2 {
+                    color: $defBlue;
+                    font-size: set-size(heading);
+                    text-transform: uppercase;
+                    letter-spacing: 3px;
+                    background: white;
+                    border-left: 5px solid $defBlue;
+                    margin: 0;
+                    padding: 5px 10px;
+                }
+                
+                p {
+                    color: white;
+                    font-size: set-size(md);
+                    border-left: 5px solid $defBlue;
+                    border-bottom: 5px solid $defBlue;
+                    padding: 15px 20px;
+
+                    span {
+                        color: $defBlue;
+                    }
+                }
+            }
+
+            .about-contact {
+                @include add-flex(column, center);
+                width: 100%;
+                background: white;
+                border-top: 3px solid $defBlue;
+                position: absolute;
+                bottom: -10px;
+                right: 0px;
+                margin: 10px 0;
+                padding: 5px 30px;
+
+                .about-links {
+                    @include add-flex;
+                    margin: 10px 0;
+
+                    a {
+                        text-decoration: none;
+                        background: white;
+                        border: 1px solid transparent;
+                        border-radius: 50%;
+                        position: relative;
+                        top: 0;
+                        margin: 0 20px;
+                        padding: 10px;
+                        transition: 300ms;
+
+                        &:hover {
+                            background: black;
+                            border: 1px solid $defBlue;
+                            top: -5px;
+                            box-shadow: $defShadow;
+                        }
+                        
+                        img {
+                            height: 75px;
+                            width: 75px;
+                            object-fit: contain;
+                            pointer-events: none;
+                            transition: 500ms;
+                        }
+
+                        &:hover img {
+                            filter: invert(1);
+                        }
+                    }
+                }
+
+                strong {
+                    color: $defBlue;
+                    font-size: set-size(xl);
+                }
+            }
+        }
+    }
+}

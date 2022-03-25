@@ -1,0 +1,70 @@
+.see-more {
+    @include add-flex(column, center);
+    background: white;
+    position: relative;
+    margin-top: 70px;
+    margin-bottom: 50px;
+
+    .see-more-holder {
+        @include add-flex(column, center);
+        width: 60%;
+        background: white;
+        border-left: 5px solid $defDarkBlue;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 5px;
+        box-shadow: $defDarkBlueShadow;
+        padding: 15px 30px;
+
+        strong {
+            color: $defBlue;
+            font-size: set-size(xxl);
+            text-align: center;
+            text-transform: capitalize;
+            letter-spacing: 5px;
+        }
+
+        .see-more-info {
+            @include add-flex;
+            margin: 5px 0;
+            
+            .see-more-github {
+                text-decoration: none;
+                background: white;
+                border-radius: 50%;
+                margin-right: 20px;
+                padding: 5px;
+                transition: 300ms;
+
+                &:hover {
+                    filter: invert(1);
+                }
+                
+                img {
+                    height: 120px;
+                    width: 120px;
+                    object-fit: contain;
+                    border-radius: 50%;
+                }
+            }
+            
+            p {
+                color: black;
+                font-size: set-size(lg);
+                margin: 0;
+            
+                a {
+                    color: $defDarkBlue;
+                    text-decoration: none;
+                    position: relative;
+                    top: 0;
+                    transition: 300ms;
+    
+                    &:hover {
+                        color: $defBlue;
+                        top: -5px;
+                    }
+                }
+            }
+        }
+    }
+}
