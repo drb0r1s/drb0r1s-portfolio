@@ -8,7 +8,7 @@
 
 *Github:* **drb0r1s**<br>
 *Discord:* **drb0r1s**#9999<br>
-*Email:* **drb0r1sdev@gmail.com**
+*Email:* **contact@drb0r1s.xyz**
 
 ### DRB0R1S Portfolio
 

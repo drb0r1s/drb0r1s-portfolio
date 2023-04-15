@@ -191,10 +191,10 @@ export const topProjectsData = [
 export const contactData = [
     {
         title: "contact mail",
-        username: "drb0r1sdev@gmail.com",
+        username: "contact@drb0r1s.xyz",
         icon: "../images/10-b-white-bg-logo.jpg",
         lineIcon: "../images/contact-mail.svg",
-        link: "mailto:drb0r1sdev@gmail.com"
+        link: "mailto:contact@drb0r1s.xyz"
     },
 
     {
@@ -207,7 +207,7 @@ export const contactData = [
 
     {
         title: "discord",
-        username: "boris#1171",
+        username: "drb0r1s#9999",
         icon: "../images/10-b-white-bg-logo.jpg",
         lineIcon: "../images/contact-discord.svg",
         link: "https://discordapp.com/users/598129893397495823"
