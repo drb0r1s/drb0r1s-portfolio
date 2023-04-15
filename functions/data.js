@@ -246,7 +246,7 @@ export const contextMenuData = [
 
             {
                 name: "page source",
-                function: () => window.open("./source.html")
+                function: () => window.open("./source")
             }
         ]
     }
@@ -258,7 +258,7 @@ export const otherContextMenuData = [
         buttons: [
             {
                 name: "return home",
-                function: () => window.open("./index.html")
+                function: () => window.open("./")
             },
 
             {
